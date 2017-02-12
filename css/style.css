@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+
+html{
+		background: url('../img/bg.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.arrow_for img{
+	height: auto;
+	width: 150px;
+
+	position: absolute;
+    top: 51%;
+	left: 90%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+    z-index: -1;
+    visibility: 0%;
+}
+
+.arrow_bac img{
+	height: auto;
+	width: 150px;
+	
+	position: absolute;
+    top: 51%;
+	left: 10%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+#contentContainer {
+    width: 920px;
+    height: 550px;
+    top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+
+    overflow: hidden;
+    position: absolute;
+}
+#wrapper {
+    width: 3680px;
+    transform: translate3d(0, 0, 0);
+    transition: transform .5s ease-in-out;
+}
+.content {
+    float: left;
+    width: 920px;
+    height: 550px;
+    white-space: normal;
+    background-repeat: no-repeat;
+}
+#itemOne {
+    background-color: transparent;
+
+}
+.title h1{
+	/*Looks*/
+	color: white;						
+	font-family: 'Roboto:700', sans-serif;
+	font-size: 60px;
+	text-align: center;
+	margin-top: 23%;
+}
+
+.title p{
+	/*Looks*/
+	color: white;						
+	font-family: 'Roboto:700', sans-serif;
+	font-size: 30px;
+	text-align: center;
+}
+
+#itemTwo {
+    background-color: #FF7F50;
+}
+#itemThree {
+    background-color: #1E90FF;
+    color: white;
+}
+#itemFour {
+    background-color: black;
+    color: white;
+}
+
+#navLinks {
+    text-align: center;
+    width: 550px;
+    position: absolute;
+    top: 85%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+}
+    #navLinks ul {
+        margin: 0px;
+        padding: 0px;
+        display: inline-block;
+        margin-top: 6px;
+    }
+        #navLinks ul li {
+            float: left;
+            text-align: center;
+            margin: 10px;
+            list-style: none;
+            cursor: pointer;
+            background-color: transparent;
+            padding: 5px;
+            border-radius: 50%;
+            border: black 5px solid;
+        }
+            #navLinks ul li:hover {
+                background-color: gray;
+            }
+            #navLinks ul li.active {
+                background-color: white;
+                color: #FFFFFF;
+                outline-width: 7px;
+            }
+                #navLinks ul li.active:hover {
+                    background-color: #484848;
+                    color: #FFFFFF;
+                }

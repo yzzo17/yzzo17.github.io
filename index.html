@@ -1,46 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Test Page</title>
-	<style type="text/css">
-		html,body
-		{
-			height: 100%;
-			display: flex;
-			justify-content: center;
-			align-content: center;
-			align-items: center;
-		}
-		
-		form
-		{
-			width: 300px;
-			background-color: #f1f1f1;
-			box-shadow: 4px 0px 5px #eeeeee;
-			padding: 10px;
-		}
+	<title>Osmani Alegre</title>
 
-		label,input
-		{
-			width: 100%;
-		}
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 
-		.spacer
-		{
-			height: 10px;
-		}
-	</style>
 </head>
-<body>
-	<div class="login">
-		<form action="">
-			<label for="">Username</label>
-			<input type="text">
-			<div class="spacer"></div>
-			<label for="">Password</label>
-			<input type="password">
-			<button type="submit">Log In</button>
-		</form>
-	</div>
-</body>
+	<body>
+		<div class="arrow_for">
+			<img src="img/for.png">
+		</div>
+		
+		<div class="arrow_bac">
+			<img src="img/bac.png">
+		</div>
+
+
+		<div id="contentContainer">
+		    <div id="wrapper">
+		        <div id="itemOne" class="content">
+		        	<div class="title">
+						<h1>Osmani Alegre</h1>
+						<p>Front-end Web Developer</p>
+					</div>
+				</div>
+		        <div id="itemTwo" class="content">
+		     		<h1>wha</h1>
+		        </div>
+		        <div id="itemThree" class="content">
+		     		<h1>wha</h1>
+		        </div>
+		        <div id="itemFour" class="content">
+	     			<h1>hi</h1>
+	        	</div>
+		    </div>
+		</div>
+
+		<div id="navLinks">
+			<ul>
+			    <li class="itemLinks" pos=0 data-pos="0px"></li>
+			    <li class="itemLinks" pos=1 data-pos="-920px"></li>
+			    <li class="itemLinks" pos=2 data-pos="-1840px"></li>
+			    <li class="itemLinks" pos=3 data-pos="-2760px"></li>
+			</ul>
+		</div>
+
+	<script>
+	// just querying the DOM...like a boss!
+	var links = document.querySelectorAll(".itemLinks");
+	var wrapper = document.querySelector("#wrapper");
+	 
+	// the activeLink provides a pointer to the currently displayed item
+	var activeLink = 0;
+	 
+	// setup the event listeners
+	for (var i = 0; i < links.length; i++) {
+	    var link = links[i];
+	    link.addEventListener('click', setClickedItem, false);
+	 
+	    // identify the item for the activeLink
+	    link.itemID = i;
+	}
+	 
+	// set first item as active
+	links[activeLink].classList.add("active");
+	 
+	function setClickedItem(e) {
+	    removeActiveLinks();
+	 
+	    var clickedLink = e.target;
+	    activeLink = clickedLink.itemID;
+	 
+	    changePosition(clickedLink);
+	}
+	 
+	function removeActiveLinks() {
+	    for (var i = 0; i < links.length; i++) {
+	        links[i].classList.remove("active");
+	    }
+	}
+	 
+	// Handle changing the slider position as well as ensure
+	// the correct link is highlighted as being active
+	function changePosition(link) {
+	    var position = link.getAttribute("data-pos");
+	 
+	    var translateValue = "translate3d(" + position + ", 0px, 0)";
+	    wrapper.style.transform = translateValue;
+	 
+	    link.classList.add("active");
+	} 
+	</script>
+	</body>
 </html>
